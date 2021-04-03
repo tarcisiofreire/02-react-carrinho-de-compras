@@ -44,7 +44,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     if (cartPreviusValue !== cart) {
       localStorage.setItem('@RocketShoes:cart',JSON.stringify(cart))
     }
-  })
+  }, [cart, cartPreviusValue])
 
   const addProduct = async (productId: number) => {
     try {
